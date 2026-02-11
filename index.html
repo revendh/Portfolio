@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revendh Kumar M | DevSecOps Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #f8fbff, #eef2ff);
+    color:#1e293b;
+    line-height:1.7;
+}
+
+.container{
+    width:85%;
+    max-width:1000px;
+    margin:60px auto;
+}
+
+header{
+    margin-bottom:40px;
+}
+
+header h1{
+    font-size:36px;
+    font-weight:700;
+}
+
+header h2{
+    font-size:20px;
+    font-weight:500;
+    color:#2563eb;
+    margin-top:5px;
+}
+
+.contact{
+    margin-top:10px;
+    color:#475569;
+}
+
+section{
+    margin-bottom:50px;
+    opacity:0;
+    transform:translateY(30px);
+    transition: all 0.8s ease;
+}
+
+section.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+h3{
+    font-size:20px;
+    margin-bottom:15px;
+    color:#2563eb;
+    border-bottom:2px solid #2563eb;
+    display:inline-block;
+    padding-bottom:4px;
+}
+
+ul{
+    margin-left:20px;
+    margin-top:10px;
+}
+
+li{
+    margin-bottom:8px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.05);
+}
+
+footer{
+    text-align:center;
+    margin-top:40px;
+    color:#64748b;
+    font-size:14px;
+}
+
+@media(max-width:768px){
+    .container{
+        width:92%;
+    }
+    header h1{
+        font-size:28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+<h1>Revendh Kumar M</h1>
+<h2>DevSecOps Engineer</h2>
+<div class="contact">
+revendh2704@gmail.com | +91 9344639486
+</div>
+</header>
+
+<section>
+<h3>SUMMARY</h3>
+<div class="card">
+Motivated DevOps Engineer with strong expertise in Kubernetes and container technologies, 
+seeking to design, secure, and manage scalable cloud-native platforms. 
+Aiming to contribute DevSecOps best practices and automation skills to support reliable, secure, 
+and high-performance systems.
+</div>
+</section>
+
+<section>
+<h3>PROFESSIONAL SUMMARY</h3>
+<div class="card">
+<ul>
+<li>Demonstrated strong expertise in SAST, DAST, SCA, container image scanning, and image signing ensuring SDLC security.</li>
+<li>Collaborated with AccuKnox to implement Kubernetes runtime protection, policy enforcement, and advanced container security strategies.</li>
+<li>Implemented NCCS-aligned security hardening for TE-OSM project.</li>
+<li>Remediated VM vulnerabilities using Nessus through patching and configuration hardening.</li>
+<li>Integrated security tools for vulnerability scanning, secret detection, and policy enforcement within Kubernetes and CI/CD pipelines.</li>
+<li>Designed secure Kubernetes deployments with RBAC, network policies, admission controls, and continuous monitoring.</li>
+<li>Executed zero-downtime cloud migration using HCM and Concert Workflow tools.</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h3>WORK EXPERIENCE</h3>
+<div class="card">
+<strong>TATAELXSI</strong><br>
+Senior Engineer<br>
+July 2023 – Current
+</div>
+</section>
+
+<section>
+<h3>TECHNICAL SKILLS</h3>
+<div class="card">
+<ul>
+<li><strong>OS & Host Security:</strong> Linux hardening (Red Hat, Ubuntu), patch management, Nessus remediation, UFW, iptables</li>
+<li><strong>Application Security:</strong> SonarQube, Kiuwan, OWASP ZAP, Trivy, Syft, Gitleaks, Bandit, TLS/HTTPS</li>
+<li><strong>Network Security:</strong> Wireshark, Nmap, Metasploit, Snort</li>
+<li><strong>Monitoring & Logging:</strong> ELK Stack, syslog, audit logs</li>
+<li><strong>Scripting:</strong> Basic Python automation</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h3>PROJECT EXPERIENCE</h3>
+<div class="card">
+<strong>1. TE-OSM – Network Function Orchestration (ETSI-based Platform)</strong>
+<p>Standards-based orchestration and lifecycle management platform.</p>
+<ul>
+<li>Implemented NCCS-aligned security hardening and compliance controls.</li>
+<li>Integrated SAST, DAST, and SCA tools into CI/CD pipelines.</li>
+</ul>
+
+<br>
+
+<strong>2. IBM Partner Program – Cloud Migration & Automation</strong>
+<p>Hands-on experience with Hybrid Cloud Mesh (HCM) and Concert Workflow.</p>
+<ul>
+<li>Established secure VAN connectivity using HCM.</li>
+<li>Automated operations using Concert Workflow APIs.</li>
+<li>Executed zero-downtime workload migrations.</li>
+<li>Strengthened hybrid cloud orchestration and enterprise DevOps practices.</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h3>CERTIFICATIONS</h3>
+<div class="card">
+<ul>
+<li>AWS Certified Cloud Practitioner (CCP)</li>
+<li>Certified Kubernetes Administrator (CKA) – Udemy (Course Completion)</li>
+<li>Red Hat RH124</li>
+<li>Red Hat RH134</li>
+<li>Concert Workflow Cloud Automation Tool</li>
+</ul>
+</div>
+</section>
+
+<footer>
+© 2026 Revendh Kumar M | DevSecOps Engineer
+</footer>
+
+</div>
+
+<script>
+const sections = document.querySelectorAll("section");
+
+function revealOnScroll(){
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if(sectionTop < windowHeight - 100){
+            section.classList.add("visible");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+</script>
+
+</body>
+</html>

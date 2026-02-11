@@ -16,27 +16,27 @@
 }
 
 body{
-    background:#f4f7fb;
+    background:#f6f8fb;
     color:#1e293b;
-    line-height:1.7;
+    line-height:1.8;
 }
 
 .container{
     width:90%;
-    max-width:1100px;
-    margin:80px auto;
+    max-width:1000px;
+    margin:90px auto;
 }
 
 /* HEADER */
 header{
     text-align:center;
-    margin-bottom:80px;
+    margin-bottom:90px;
 }
 
 header h1{
-    font-size:42px;
+    font-size:44px;
     font-weight:800;
-    color:#1e293b;
+    letter-spacing:1px;
 }
 
 header h2{
@@ -46,41 +46,17 @@ header h2{
 }
 
 .contact{
-    margin-top:8px;
+    margin-top:12px;
     color:#64748b;
+    font-size:15px;
 }
 
-/* COUNTERS */
-.stats{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    margin-bottom:80px;
-    flex-wrap:wrap;
-}
-
-.stat-box{
-    flex:1;
-    min-width:200px;
-    background:white;
-    padding:30px;
-    border-radius:12px;
-    text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,0.05);
-}
-
-.stat-number{
-    font-size:32px;
-    font-weight:700;
-    color:#2563eb;
-}
-
-/* SECTIONS */
+/* SECTION ANIMATION */
 .section{
-    margin-bottom:60px;
+    margin-bottom:70px;
     opacity:0;
     transform:translateY(40px);
-    transition:0.6s ease;
+    transition:0.7s ease;
 }
 
 .section.visible{
@@ -88,16 +64,23 @@ header h2{
     transform:translateY(0);
 }
 
+/* CARD STYLE */
 .card{
     background:white;
-    padding:35px;
-    border-radius:14px;
-    box-shadow:0 15px 35px rgba(0,0,0,0.05);
+    padding:40px;
+    border-radius:16px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.06);
+    transition:transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover{
+    transform:scale(1.03);
+    box-shadow:0 25px 60px rgba(0,0,0,0.12);
 }
 
 .card h3{
-    margin-bottom:20px;
     font-size:22px;
+    margin-bottom:20px;
     color:#2563eb;
 }
 
@@ -106,7 +89,7 @@ ul{
 }
 
 li{
-    margin-bottom:8px;
+    margin-bottom:10px;
 }
 
 /* TIMELINE */
@@ -122,7 +105,7 @@ li{
 /* FOOTER */
 footer{
     text-align:center;
-    margin-top:80px;
+    margin-top:100px;
     color:#64748b;
     font-size:14px;
 }
@@ -147,24 +130,6 @@ revendh2704@gmail.com | +91 9344639486
 </div>
 </header>
 
-<!-- STATS -->
-<div class="stats">
-<div class="stat-box">
-<div class="stat-number" data-target="3">0</div>
-<p>Years Experience</p>
-</div>
-
-<div class="stat-box">
-<div class="stat-number" data-target="10">0</div>
-<p>Major Implementations</p>
-</div>
-
-<div class="stat-box">
-<div class="stat-number" data-target="25">0</div>
-<p>Security Tools Used</p>
-</div>
-</div>
-
 <!-- SUMMARY -->
 <div class="section">
 <div class="card">
@@ -179,7 +144,7 @@ Motivated DevOps Engineer with strong expertise in Kubernetes and container tech
 <h3>Professional Summary</h3>
 <ul>
 <li>Expertise in SAST, DAST, SCA, container image scanning, and image signing.</li>
-<li>Collaborated with AccuKnox for Kubernetes runtime protection and security policy enforcement.</li>
+<li>Collaborated with AccuKnox for Kubernetes runtime protection and policy enforcement.</li>
 <li>Implemented NCCS-aligned compliance controls for TE-OSM project.</li>
 <li>Remediated vulnerabilities using Nessus and secure configuration practices.</li>
 <li>Integrated automated security scanning within CI/CD pipelines.</li>
@@ -274,7 +239,6 @@ July 2023 – Current
 </div>
 
 <script>
-/* Scroll Animation */
 const sections = document.querySelectorAll(".section");
 
 function reveal(){
@@ -287,25 +251,6 @@ section.classList.add("visible");
 
 window.addEventListener("scroll", reveal);
 window.addEventListener("load", reveal);
-
-/* Counter Animation */
-const counters = document.querySelectorAll(".stat-number");
-
-counters.forEach(counter=>{
-const update = ()=>{
-const target = +counter.dataset.target;
-const current = +counter.innerText;
-const increment = target / 80;
-
-if(current < target){
-counter.innerText = Math.ceil(current + increment);
-setTimeout(update,20);
-} else {
-counter.innerText = target;
-}
-};
-update();
-});
 </script>
 
 </body>

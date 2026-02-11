@@ -5,54 +5,158 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Revendh Kumar M | DevSecOps Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Inter', sans-serif;
+    font-family:'Inter',sans-serif;
 }
 
 body{
-    background: linear-gradient(135deg, #f8fbff, #eef2ff);
+    background:linear-gradient(135deg,#eef2ff,#f8fafc);
     color:#1e293b;
-    line-height:1.7;
+    overflow-x:hidden;
 }
 
 .container{
     width:85%;
-    max-width:1000px;
-    margin:60px auto;
+    max-width:1100px;
+    margin:80px auto;
 }
 
+/* HEADER */
 header{
-    margin-bottom:40px;
+    text-align:center;
+    margin-bottom:70px;
 }
 
 header h1{
-    font-size:36px;
-    font-weight:700;
+    font-size:42px;
+    font-weight:800;
+    background:linear-gradient(90deg,#2563eb,#7c3aed);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 header h2{
     font-size:20px;
-    font-weight:500;
-    color:#2563eb;
-    margin-top:5px;
-}
-
-.contact{
     margin-top:10px;
     color:#475569;
 }
 
-section{
+.contact{
+    margin-top:10px;
+    color:#64748b;
+}
+
+/* COUNTERS */
+.counters{
+    display:flex;
+    justify-content:space-around;
+    margin-bottom:80px;
+    text-align:center;
+}
+
+.counter-box{
+    padding:20px 40px;
+}
+
+.counter{
+    font-size:36px;
+    font-weight:700;
+    color:#2563eb;
+}
+
+.counter-title{
+    color:#64748b;
+}
+
+/* 3D CARD */
+.card{
+    background:white;
+    padding:30px;
+    border-radius:16px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
     margin-bottom:50px;
+    transition:0.2s ease;
+    transform-style:preserve-3d;
+}
+
+.card h3{
+    color:#2563eb;
+    margin-bottom:20px;
+}
+
+.card:hover{
+    box-shadow:0 25px 60px rgba(0,0,0,0.15);
+}
+
+/* TIMELINE */
+.timeline{
+    position:relative;
+    padding-left:40px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:10px;
+    top:0;
+    width:3px;
+    height:100%;
+    background:#2563eb;
+}
+
+.timeline-item{
+    position:relative;
+    margin-bottom:40px;
     opacity:0;
-    transform:translateY(30px);
-    transition: all 0.8s ease;
+    transform:translateY(40px);
+    transition:0.6s ease;
+}
+
+.timeline-item.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    left:-2px;
+    top:5px;
+    width:14px;
+    height:14px;
+    background:#2563eb;
+    border-radius:50%;
+}
+
+ul{
+    margin-left:20px;
+}
+
+.skill-bar{
+    height:8px;
+    background:#e2e8f0;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:6px;
+}
+
+.skill-progress{
+    height:8px;
+    width:0;
+    background:linear-gradient(90deg,#2563eb,#7c3aed);
+    transition:2s ease;
+}
+
+section{
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s ease;
 }
 
 section.visible{
@@ -60,44 +164,16 @@ section.visible{
     transform:translateY(0);
 }
 
-h3{
-    font-size:20px;
-    margin-bottom:15px;
-    color:#2563eb;
-    border-bottom:2px solid #2563eb;
-    display:inline-block;
-    padding-bottom:4px;
-}
-
-ul{
-    margin-left:20px;
-    margin-top:10px;
-}
-
-li{
-    margin-bottom:8px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.05);
-}
-
 footer{
     text-align:center;
-    margin-top:40px;
+    margin-top:80px;
     color:#64748b;
-    font-size:14px;
 }
 
 @media(max-width:768px){
-    .container{
-        width:92%;
-    }
-    header h1{
-        font-size:28px;
+    .counters{
+        flex-direction:column;
+        gap:20px;
     }
 }
 </style>
@@ -115,86 +191,64 @@ revendh2704@gmail.com | +91 9344639486
 </div>
 </header>
 
+<!-- COUNTERS -->
+<div class="counters">
+<div class="counter-box">
+<div class="counter" data-target="3">0</div>
+<div class="counter-title">Years Experience</div>
+</div>
+
+<div class="counter-box">
+<div class="counter" data-target="8">0</div>
+<div class="counter-title">Major Projects</div>
+</div>
+
+<div class="counter-box">
+<div class="counter" data-target="20">0</div>
+<div class="counter-title">Security Tools</div>
+</div>
+</div>
+
 <section>
+<div class="card">
 <h3>SUMMARY</h3>
-<div class="card">
 Motivated DevOps Engineer with strong expertise in Kubernetes and container technologies, 
-seeking to design, secure, and manage scalable cloud-native platforms. 
-Aiming to contribute DevSecOps best practices and automation skills to support reliable, secure, 
-and high-performance systems.
+focused on designing secure, scalable cloud-native platforms and implementing DevSecOps automation.
 </div>
 </section>
 
 <section>
-<h3>PROFESSIONAL SUMMARY</h3>
 <div class="card">
-<ul>
-<li>Demonstrated strong expertise in SAST, DAST, SCA, container image scanning, and image signing ensuring SDLC security.</li>
-<li>Collaborated with AccuKnox to implement Kubernetes runtime protection, policy enforcement, and advanced container security strategies.</li>
-<li>Implemented NCCS-aligned security hardening for TE-OSM project.</li>
-<li>Remediated VM vulnerabilities using Nessus through patching and configuration hardening.</li>
-<li>Integrated security tools for vulnerability scanning, secret detection, and policy enforcement within Kubernetes and CI/CD pipelines.</li>
-<li>Designed secure Kubernetes deployments with RBAC, network policies, admission controls, and continuous monitoring.</li>
-<li>Executed zero-downtime cloud migration using HCM and Concert Workflow tools.</li>
-</ul>
-</div>
-</section>
-
-<section>
-<h3>WORK EXPERIENCE</h3>
-<div class="card">
-<strong>TATAELXSI</strong><br>
-Senior Engineer<br>
-July 2023 – Current
-</div>
-</section>
-
-<section>
 <h3>TECHNICAL SKILLS</h3>
-<div class="card">
-<ul>
-<li><strong>OS & Host Security:</strong> Linux hardening (Red Hat, Ubuntu), patch management, Nessus remediation, UFW, iptables</li>
-<li><strong>Application Security:</strong> SonarQube, Kiuwan, OWASP ZAP, Trivy, Syft, Gitleaks, Bandit, TLS/HTTPS</li>
-<li><strong>Network Security:</strong> Wireshark, Nmap, Metasploit, Snort</li>
-<li><strong>Monitoring & Logging:</strong> ELK Stack, syslog, audit logs</li>
-<li><strong>Scripting:</strong> Basic Python automation</li>
-</ul>
+
+Kubernetes & Container Security
+<div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div>
+
+CI/CD Security Integration
+<div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+
+Cloud Security (AWS)
+<div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+
+Vulnerability Management
+<div class="skill-bar"><div class="skill-progress" data-width="92%"></div></div>
+
 </div>
 </section>
 
 <section>
-<h3>PROJECT EXPERIENCE</h3>
 <div class="card">
-<strong>1. TE-OSM – Network Function Orchestration (ETSI-based Platform)</strong>
-<p>Standards-based orchestration and lifecycle management platform.</p>
-<ul>
-<li>Implemented NCCS-aligned security hardening and compliance controls.</li>
-<li>Integrated SAST, DAST, and SCA tools into CI/CD pipelines.</li>
-</ul>
+<h3>WORK EXPERIENCE</h3>
 
-<br>
-
-<strong>2. IBM Partner Program – Cloud Migration & Automation</strong>
-<p>Hands-on experience with Hybrid Cloud Mesh (HCM) and Concert Workflow.</p>
-<ul>
-<li>Established secure VAN connectivity using HCM.</li>
-<li>Automated operations using Concert Workflow APIs.</li>
-<li>Executed zero-downtime workload migrations.</li>
-<li>Strengthened hybrid cloud orchestration and enterprise DevOps practices.</li>
-</ul>
+<div class="timeline">
+<div class="timeline-item">
+<strong>TATAELXSI — Senior Engineer</strong><br>
+July 2023 – Current<br>
+Leading DevSecOps initiatives, Kubernetes security hardening, CI/CD security integration, 
+and hybrid cloud migration strategies.
 </div>
-</section>
+</div>
 
-<section>
-<h3>CERTIFICATIONS</h3>
-<div class="card">
-<ul>
-<li>AWS Certified Cloud Practitioner (CCP)</li>
-<li>Certified Kubernetes Administrator (CKA) – Udemy (Course Completion)</li>
-<li>Red Hat RH124</li>
-<li>Red Hat RH134</li>
-<li>Concert Workflow Cloud Automation Tool</li>
-</ul>
 </div>
 </section>
 
@@ -205,20 +259,72 @@ July 2023 – Current
 </div>
 
 <script>
-const sections = document.querySelectorAll("section");
 
-function revealOnScroll(){
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if(sectionTop < windowHeight - 100){
+/* Scroll Reveal */
+const sections = document.querySelectorAll("section");
+const timelineItems = document.querySelectorAll(".timeline-item");
+const skills = document.querySelectorAll(".skill-progress");
+
+function reveal(){
+    sections.forEach(section=>{
+        if(section.getBoundingClientRect().top < window.innerHeight - 100){
             section.classList.add("visible");
+        }
+    });
+
+    timelineItems.forEach(item=>{
+        if(item.getBoundingClientRect().top < window.innerHeight - 100){
+            item.classList.add("visible");
+        }
+    });
+
+    skills.forEach(skill=>{
+        if(skill.getBoundingClientRect().top < window.innerHeight - 50){
+            skill.style.width = skill.getAttribute("data-width");
         }
     });
 }
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
+
+/* Counter Animation */
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter=>{
+    const update = ()=>{
+        const target = +counter.getAttribute("data-target");
+        const current = +counter.innerText;
+        const increment = target / 100;
+
+        if(current < target){
+            counter.innerText = Math.ceil(current + increment);
+            setTimeout(update,20);
+        } else {
+            counter.innerText = target;
+        }
+    };
+    update();
+});
+
+/* 3D Tilt Effect */
+document.querySelectorAll(".card").forEach(card=>{
+    card.addEventListener("mousemove",(e)=>{
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const rotateX = -(y - rect.height/2) / 20;
+        const rotateY = (x - rect.width/2) / 20;
+
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    card.addEventListener("mouseleave",()=>{
+        card.style.transform = "rotateX(0) rotateY(0)";
+    });
+});
+
 </script>
 
 </body>

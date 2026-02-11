@@ -16,9 +16,32 @@
 }
 
 body{
-    background:#f6f8fb;
+    background:linear-gradient(135deg,#eef2f7,#f5f9ff);
     color:#1e293b;
     line-height:1.8;
+}
+
+/* Soft floating gradient background */
+body::before{
+    content:"";
+    position:fixed;
+    top:-150px;
+    right:-150px;
+    width:400px;
+    height:400px;
+    background:radial-gradient(circle, rgba(37,99,235,0.15), transparent 70%);
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    bottom:-150px;
+    left:-150px;
+    width:400px;
+    height:400px;
+    background:radial-gradient(circle, rgba(99,102,241,0.15), transparent 70%);
+    z-index:-1;
 }
 
 .container{
@@ -36,7 +59,9 @@ header{
 header h1{
     font-size:44px;
     font-weight:800;
-    letter-spacing:1px;
+    background:linear-gradient(90deg,#1e293b,#2563eb);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 header h2{
@@ -47,7 +72,7 @@ header h2{
 
 .contact{
     margin-top:12px;
-    color:#64748b;
+    color:#475569;
     font-size:15px;
 }
 
@@ -66,7 +91,7 @@ header h2{
 
 /* CARD STYLE */
 .card{
-    background:white;
+    background:linear-gradient(135deg,#ffffff,#f1f5fb);
     padding:40px;
     border-radius:16px;
     box-shadow:0 15px 40px rgba(0,0,0,0.06);
@@ -81,7 +106,9 @@ header h2{
 .card h3{
     font-size:22px;
     margin-bottom:20px;
-    color:#2563eb;
+    background:linear-gradient(90deg,#2563eb,#6366f1);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 ul{
